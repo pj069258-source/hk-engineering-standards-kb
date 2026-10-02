@@ -1,0 +1,8 @@
+# 統一換行，避免 Windows/Linux 協作時產生無意義的 diff
+* text=auto eol=lf
+
+# 二進位檔
+*.png binary
+*.jpg binary
+*.pdf binary
+*.rtf binary

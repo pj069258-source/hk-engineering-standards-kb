@@ -1,0 +1,14 @@
+# 法例全文與網頁快取 —— 版權原因不發佈
+# 需要時自行重建： node fetch-eleg-rtf.mjs cap406 cap406D cap406E ...
+evidence/
+pdf-cache/
+_work/
+
+# 第三方知識庫（無 license，未隨庫發佈）
+knowledge.json
+
+# 一般
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
