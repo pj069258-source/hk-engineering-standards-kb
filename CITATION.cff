@@ -27,15 +27,13 @@ keywords:
   - building regulations
   - engineering standards
 authors:
-  - name: "AI Engineering"
-    alias: "AI工程"
+  - name: "pj069258-source"
     website: "https://github.com/pj069258-source"
 preferred-citation:
   type: dataset
   title: "香港工程標準知識庫 (HK Engineering Standards Knowledge Base)"
   authors:
-    - name: "AI Engineering"
-      alias: "AI工程"
+    - name: "pj069258-source"
   year: 2026
   version: 1.0.0
   url: "https://github.com/pj069258-source/hk-engineering-standards-kb"
@@ -44,3 +42,4 @@ notes: >-
   香港特別行政區政府及有關機構為該等資料的知識產權擁有人。
   使用資料前請閱讀 NOTICE.md 的歸屬聲明與免責條款。
   MIT 授權僅適用於本倉庫的程式碼，不適用於資料檔案。
+  作者欄位為 GitHub 帳號（非機構名稱）；如日後以公司或個人名義正式發佈，請更新此欄位。

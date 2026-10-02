@@ -160,4 +160,4 @@ Action 檔案暫放於 [`docs/ci/verify-links.yml`](docs/ci/verify-links.yml)，
 - **程式碼**：MIT（見 [`LICENSE`](LICENSE)）
 - **資料**：政府資料衍生作品，依 [`NOTICE.md`](NOTICE.md) 的歸屬與免責條款使用
 
-**維護**：AI Engineering（AI工程）· 引用格式見 [`CITATION.cff`](CITATION.cff)
+**維護**：本倉庫維護者（GitHub：`pj069258-source`）· 引用格式見 [`CITATION.cff`](CITATION.cff)
