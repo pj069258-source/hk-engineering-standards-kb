@@ -137,9 +137,21 @@ node verify-quotes.mjs     # 逐字回溯（需先建立 evidence/）
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 行為準則（改編自 Contributor Covenant 2.1） |
 | [SECURITY.md](SECURITY.md) | 資料完整性與安全政策：如何回報可能導致安全風險的錯誤 |
 | [CITATION.cff](CITATION.cff) | 引用格式 |
-| [`.github/workflows/verify-links.yml`](.github/workflows/verify-links.yml) | **每季自動**實測所有官方連結，失效時自動開 Issue |
+| [`.github/workflows/verify-links.yml`](docs/ci/verify-links.yml) | **每季自動**實測所有官方連結，失效時自動開 Issue（見下方啟用說明） |
 
 `check-urls.mjs` 有問題時會以退出碼 `1` 結束，可直接用於 CI 或 pre-commit hook。
+
+### 啟用每季自動驗證
+
+Action 檔案暫放於 [`docs/ci/verify-links.yml`](docs/ci/verify-links.yml)，未放在 `.github/workflows/`，原因是 **GitHub 要求推送 workflow 檔案的權杖必須具備 `workflow` scope**。啟用方式二選一：
+
+1. **重新授權後移動檔案**（指令方式）
+   ```bash
+   gh auth refresh -h github.com -s workflow      # 完成裝置碼授權
+   git mv docs/ci/verify-links.yml .github/workflows/verify-links.yml
+   git commit -m "ci: 啟用每季連結驗證" && git push
+   ```
+2. **直接在網頁建立**：到倉庫 → Actions → New workflow，把 `docs/ci/verify-links.yml` 的內容貼上
 
 ## 授權
 
