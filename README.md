@@ -129,6 +129,18 @@ node verify-quotes.mjs     # 逐字回溯（需先建立 evidence/）
 - 法定要求與業界慣例必須分開標示（`authority_level`）
 - 具體數值門檻優先；查不到就不要寫模糊描述
 
+## 貢獻與維護
+
+| 檔案 | 用途 |
+|---|---|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 貢獻指南：**貢獻紅線**（不得貼法例全文、不得憑記憶填寫）、條目格式、品質檢查清單 |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 行為準則（改編自 Contributor Covenant 2.1） |
+| [SECURITY.md](SECURITY.md) | 資料完整性與安全政策：如何回報可能導致安全風險的錯誤 |
+| [CITATION.cff](CITATION.cff) | 引用格式 |
+| [`.github/workflows/verify-links.yml`](.github/workflows/verify-links.yml) | **每季自動**實測所有官方連結，失效時自動開 Issue |
+
+`check-urls.mjs` 有問題時會以退出碼 `1` 結束，可直接用於 CI 或 pre-commit hook。
+
 ## 授權
 
 - **程式碼**：MIT（見 [`LICENSE`](LICENSE)）

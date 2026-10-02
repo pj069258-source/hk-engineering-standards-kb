@@ -67,3 +67,6 @@ if (problems.length) {
     console.log('\n需人工處理的連結：');
     for (const p of problems) console.log(`  [${p.status}] ${p.note}  影響條目: ${p.ids.join(', ')}\n      ${p.url}`);
 }
+
+// 退出碼供 CI 判斷：有問題回 1，全部正常回 0
+process.exit(problems.length ? 1 : 0);

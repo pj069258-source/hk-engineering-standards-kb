@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "如使用本資料集，請依下列格式引用。"
+title: "香港工程標準知識庫 (HK Engineering Standards Knowledge Base)"
+abstract: >-
+  136 條香港建築工程官方標準條目，涵蓋水務、電力、建築裝修、消防、職業安全健康、
+  滲水防水六大範疇。每條附官方出處、條文編號、效力等級（法定條例／附屬法例／官方指引／
+  官方實務守則／業界標準）與可核查連結。
+type: dataset
+version: 1.0.0
+date-released: "2026-10-03"
+license: MIT
+license-url: "https://github.com/pj069258-source/hk-engineering-standards-kb/blob/main/LICENSE"
+repository-code: "https://github.com/pj069258-source/hk-engineering-standards-kb"
+keywords:
+  - 香港
+  - 建築工程
+  - 工程標準
+  - 水務
+  - 電力
+  - 消防
+  - 職業安全
+  - 防水
+  - Hong Kong
+  - construction standards
+  - building services
+  - building regulations
+authors:
+  - name: "pj069258-source"
+    website: "https://github.com/pj069258-source"
+preferred-citation:
+  type: dataset
+  title: "香港工程標準知識庫 (HK Engineering Standards Knowledge Base)"
+  year: 2026
+  version: 1.0.0
+  url: "https://github.com/pj069258-source/hk-engineering-standards-kb"
+notes: >-
+  本資料集以香港特別行政區政府及有關機構的公開資料為基礎改寫而成；
+  香港特別行政區政府及有關機構為該等資料的知識產權擁有人。
+  使用資料前請閱讀 NOTICE.md 的歸屬聲明與免責條款。
+  MIT 授權僅適用於本倉庫的程式碼，不適用於資料檔案。

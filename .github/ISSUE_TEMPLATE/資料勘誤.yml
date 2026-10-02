@@ -1,0 +1,52 @@
+name: 資料勘誤 / 內容有誤
+description: 回報知識庫條目與官方原文不符，或可能導致安全風險的錯誤
+title: "[勘誤] <條目 id>：<簡述>"
+labels: ["資料勘誤"]
+body:
+  - type: input
+    id: entry_id
+    attributes:
+      label: 條目 id
+      description: 例如 hk-emsd-0013
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題描述
+      description: 該條目哪一句、哪個數字或哪個效力等級標示有誤？
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 官方來源連結
+      description: 優先提供 e-Legislation 的「經核證文本」或部門官方頁面連結
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 官方原文片段
+      description: 貼上證明你論點的原文片段（請勿貼整份文件或法例全文，只貼相關片段即可）
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 嚴重程度
+      options:
+        - 可能導致工程安全風險（最高優先）
+        - 法定要求與業界慣例標示錯誤
+        - 數字或時限有誤
+        - 出處連結失效
+        - 文字或分類問題
+    validations:
+      required: true
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: 確認
+      options:
+        - label: 我已實際查閱上述官方來源，並非憑記憶或推測提出
+          required: true

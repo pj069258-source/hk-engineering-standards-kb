@@ -1,0 +1,58 @@
+name: 連結與資料完整性驗證
+
+# 每季（1/4/7/10 月 1 日 UTC 00:00）自動檢查所有官方連結是否仍有效，
+# 失效或內容異常時自動開 Issue 提醒更新。也可在 Actions 頁面手動觸發。
+on:
+  schedule:
+    - cron: '0 0 1 */3 *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 驗證知識庫結構
+        run: node build.mjs
+
+      - name: 實測所有官方連結
+        id: urls
+        continue-on-error: true
+        run: node check-urls.mjs
+
+      - name: 連結失效時開 Issue
+        if: steps.urls.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `[自動檢查] 官方連結失效或內容異常（${new Date().toISOString().slice(0,10)}）`;
+            const body = [
+              '本次排程驗證發現部分官方連結失效或內容異常。',
+              '',
+              '請查看本次 workflow 的 log 取得完整清單，然後：',
+              '1. 以官方網站搜尋該文件的新位置',
+              '2. 更新 `raw/*.json` 中對應條目的 `url`',
+              '3. 執行 `node build.mjs && node check-urls.mjs` 確認',
+              '',
+              `Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              '> 注意：e-Legislation 的連結屬已知限制（自動抓取只取得 JS 載入頁），會被視為預期情況，不會列為失效。',
+            ].join('\n');
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'automated-check',
+            });
+            if (existing.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, body, labels: ['automated-check'],
+              });
+            }
