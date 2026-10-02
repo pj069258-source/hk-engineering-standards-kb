@@ -1,5 +1,7 @@
 # 香港工程標準知識庫 / HK Engineering Standards Knowledge Base
 
+![香港工程標準知識庫](.github/social-preview.png)
+
 > 136 條香港建築工程官方標準，涵蓋 **水務、電力、建築裝修、消防、職安健、滲水防水** 六大範疇。
 > 每條附**官方出處、條文編號、效力等級與可點擊連結**——為工程業界管理層的 AI 應用培訓而建。
 >
@@ -157,3 +159,5 @@ Action 檔案暫放於 [`docs/ci/verify-links.yml`](docs/ci/verify-links.yml)，
 
 - **程式碼**：MIT（見 [`LICENSE`](LICENSE)）
 - **資料**：政府資料衍生作品，依 [`NOTICE.md`](NOTICE.md) 的歸屬與免責條款使用
+
+**維護**：AI Engineering（AI工程）· 引用格式見 [`CITATION.cff`](CITATION.cff)

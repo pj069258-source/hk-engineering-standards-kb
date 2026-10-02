@@ -20,16 +20,22 @@ keywords:
   - 消防
   - 職業安全
   - 防水
+  - 香港法例
   - Hong Kong
   - construction standards
   - building services
   - building regulations
+  - engineering standards
 authors:
-  - name: "pj069258-source"
+  - name: "AI Engineering"
+    alias: "AI工程"
     website: "https://github.com/pj069258-source"
 preferred-citation:
   type: dataset
   title: "香港工程標準知識庫 (HK Engineering Standards Knowledge Base)"
+  authors:
+    - name: "AI Engineering"
+      alias: "AI工程"
   year: 2026
   version: 1.0.0
   url: "https://github.com/pj069258-source/hk-engineering-standards-kb"
